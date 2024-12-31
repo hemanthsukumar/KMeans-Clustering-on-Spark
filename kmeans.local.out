@@ -1,0 +1,494 @@
+
+The following have been reloaded with a version change:
+  1) cpu/0.17.3b => cpu/0.15.4
+
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.spark.unsafe.Platform (file:/cm/shared/apps/spack/cpu/opt/spack/linux-centos8-zen/gcc-8.3.1/spark-3.2.1-bin-hadoop3.2/jars/spark-unsafe_2.12-3.2.1.jar) to constructor java.nio.DirectByteBuffer(long,int)
+WARNING: Please consider reporting this to the maintainers of org.apache.spark.unsafe.Platform
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+24/10/21 13:32:16 INFO SparkContext: Running Spark version 3.2.1
+24/10/21 13:32:16 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+24/10/21 13:32:16 INFO ResourceUtils: ==============================================================
+24/10/21 13:32:16 INFO ResourceUtils: No custom resources configured for spark.driver.
+24/10/21 13:32:16 INFO ResourceUtils: ==============================================================
+24/10/21 13:32:16 INFO SparkContext: Submitted application: KMeans
+24/10/21 13:32:16 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+24/10/21 13:32:16 INFO ResourceProfile: Limiting resource is cpu
+24/10/21 13:32:16 INFO ResourceProfileManager: Added ResourceProfile id: 0
+24/10/21 13:32:16 INFO SecurityManager: Changing view acls to: hvangala
+24/10/21 13:32:16 INFO SecurityManager: Changing modify acls to: hvangala
+24/10/21 13:32:16 INFO SecurityManager: Changing view acls groups to: 
+24/10/21 13:32:16 INFO SecurityManager: Changing modify acls groups to: 
+24/10/21 13:32:16 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(hvangala); groups with view permissions: Set(); users  with modify permissions: Set(hvangala); groups with modify permissions: Set()
+24/10/21 13:32:16 INFO Utils: Successfully started service 'sparkDriver' on port 43559.
+24/10/21 13:32:16 INFO SparkEnv: Registering MapOutputTracker
+24/10/21 13:32:16 INFO SparkEnv: Registering BlockManagerMaster
+24/10/21 13:32:16 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+24/10/21 13:32:16 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+24/10/21 13:32:16 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+24/10/21 13:32:16 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-6f64318f-fb2e-45be-99fc-1dc369031051
+24/10/21 13:32:16 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+24/10/21 13:32:16 INFO SparkEnv: Registering OutputCommitCoordinator
+24/10/21 13:32:17 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+24/10/21 13:32:17 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://exp-1-23.expanse.sdsc.edu:4040
+24/10/21 13:32:17 INFO SparkContext: Added JAR file:/home/hvangala/project4/kmeans.jar at spark://exp-1-23.expanse.sdsc.edu:43559/jars/kmeans.jar with timestamp 1729542736075
+24/10/21 13:32:17 INFO Executor: Starting executor ID driver on host exp-1-23.expanse.sdsc.edu
+24/10/21 13:32:17 INFO Executor: Fetching spark://exp-1-23.expanse.sdsc.edu:43559/jars/kmeans.jar with timestamp 1729542736075
+24/10/21 13:32:17 INFO TransportClientFactory: Successfully created connection to exp-1-23.expanse.sdsc.edu/198.202.103.232:43559 after 35 ms (0 ms spent in bootstraps)
+24/10/21 13:32:17 INFO Utils: Fetching spark://exp-1-23.expanse.sdsc.edu:43559/jars/kmeans.jar to /tmp/spark-6224d172-a079-4590-881a-790498bbd27a/userFiles-9bc7d73e-8c83-4937-8881-35bc6593dba8/fetchFileTemp4118399456975775232.tmp
+24/10/21 13:32:17 INFO Executor: Adding file:/tmp/spark-6224d172-a079-4590-881a-790498bbd27a/userFiles-9bc7d73e-8c83-4937-8881-35bc6593dba8/kmeans.jar to class loader
+24/10/21 13:32:17 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 33397.
+24/10/21 13:32:17 INFO NettyBlockTransferService: Server created on exp-1-23.expanse.sdsc.edu:33397
+24/10/21 13:32:17 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+24/10/21 13:32:17 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, exp-1-23.expanse.sdsc.edu, 33397, None)
+24/10/21 13:32:17 INFO BlockManagerMasterEndpoint: Registering block manager exp-1-23.expanse.sdsc.edu:33397 with 434.4 MiB RAM, BlockManagerId(driver, exp-1-23.expanse.sdsc.edu, 33397, None)
+24/10/21 13:32:17 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, exp-1-23.expanse.sdsc.edu, 33397, None)
+24/10/21 13:32:17 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, exp-1-23.expanse.sdsc.edu, 33397, None)
+24/10/21 13:32:18 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 219.7 KiB, free 434.2 MiB)
+24/10/21 13:32:18 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 32.1 KiB, free 434.2 MiB)
+24/10/21 13:32:18 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on exp-1-23.expanse.sdsc.edu:33397 (size: 32.1 KiB, free: 434.4 MiB)
+24/10/21 13:32:18 INFO SparkContext: Created broadcast 0 from textFile at KMeans.scala:23
+24/10/21 13:32:18 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 219.7 KiB, free 433.9 MiB)
+24/10/21 13:32:18 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 32.1 KiB, free 433.9 MiB)
+24/10/21 13:32:18 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on exp-1-23.expanse.sdsc.edu:33397 (size: 32.1 KiB, free: 434.3 MiB)
+24/10/21 13:32:18 INFO SparkContext: Created broadcast 1 from textFile at KMeans.scala:29
+24/10/21 13:32:18 INFO FileInputFormat: Total input files to process : 1
+24/10/21 13:32:18 INFO SparkContext: Starting job: collect at KMeans.scala:29
+24/10/21 13:32:18 INFO DAGScheduler: Got job 0 (collect at KMeans.scala:29) with 2 output partitions
+24/10/21 13:32:18 INFO DAGScheduler: Final stage: ResultStage 0 (collect at KMeans.scala:29)
+24/10/21 13:32:18 INFO DAGScheduler: Parents of final stage: List()
+24/10/21 13:32:18 INFO DAGScheduler: Missing parents: List()
+24/10/21 13:32:18 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[5] at map at KMeans.scala:29), which has no missing parents
+24/10/21 13:32:18 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 5.1 KiB, free 433.9 MiB)
+24/10/21 13:32:18 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 2.9 KiB, free 433.9 MiB)
+24/10/21 13:32:18 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on exp-1-23.expanse.sdsc.edu:33397 (size: 2.9 KiB, free: 434.3 MiB)
+24/10/21 13:32:18 INFO SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:1478
+24/10/21 13:32:18 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 0 (MapPartitionsRDD[5] at map at KMeans.scala:29) (first 15 tasks are for partitions Vector(0, 1))
+24/10/21 13:32:18 INFO TaskSchedulerImpl: Adding task set 0.0 with 2 tasks resource profile 0
+24/10/21 13:32:18 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (exp-1-23.expanse.sdsc.edu, executor driver, partition 0, PROCESS_LOCAL, 4511 bytes) taskResourceAssignments Map()
+24/10/21 13:32:18 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1) (exp-1-23.expanse.sdsc.edu, executor driver, partition 1, PROCESS_LOCAL, 4511 bytes) taskResourceAssignments Map()
+24/10/21 13:32:18 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+24/10/21 13:32:18 INFO Executor: Running task 1.0 in stage 0.0 (TID 1)
+24/10/21 13:32:18 INFO HadoopRDD: Input split: file:/home/hvangala/project4/centroids.txt:450+450
+24/10/21 13:32:18 INFO HadoopRDD: Input split: file:/home/hvangala/project4/centroids.txt:0+450
+24/10/21 13:32:18 INFO Executor: Finished task 1.0 in stage 0.0 (TID 1). 2216 bytes result sent to driver
+24/10/21 13:32:18 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 2360 bytes result sent to driver
+24/10/21 13:32:18 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 230 ms on exp-1-23.expanse.sdsc.edu (executor driver) (1/2)
+24/10/21 13:32:19 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 286 ms on exp-1-23.expanse.sdsc.edu (executor driver) (2/2)
+24/10/21 13:32:19 INFO DAGScheduler: ResultStage 0 (collect at KMeans.scala:29) finished in 0.376 s
+24/10/21 13:32:19 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+24/10/21 13:32:19 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+24/10/21 13:32:19 INFO TaskSchedulerImpl: Killing all running tasks in stage 0: Stage finished
+24/10/21 13:32:19 INFO DAGScheduler: Job 0 finished: collect at KMeans.scala:29, took 0.436465 s
+24/10/21 13:32:19 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 4.3 KiB, free 433.9 MiB)
+24/10/21 13:32:19 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 846.0 B, free 433.9 MiB)
+24/10/21 13:32:19 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on exp-1-23.expanse.sdsc.edu:33397 (size: 846.0 B, free: 434.3 MiB)
+24/10/21 13:32:19 INFO SparkContext: Created broadcast 3 from broadcast at KMeans.scala:37
+24/10/21 13:32:19 INFO FileInputFormat: Total input files to process : 1
+24/10/21 13:32:19 INFO SparkContext: Starting job: collect at KMeans.scala:46
+24/10/21 13:32:19 INFO DAGScheduler: Registering RDD 6 (map at KMeans.scala:40) as input to shuffle 0
+24/10/21 13:32:19 INFO DAGScheduler: Got job 1 (collect at KMeans.scala:46) with 2 output partitions
+24/10/21 13:32:19 INFO DAGScheduler: Final stage: ResultStage 2 (collect at KMeans.scala:46)
+24/10/21 13:32:19 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 1)
+24/10/21 13:32:19 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 1)
+24/10/21 13:32:19 INFO DAGScheduler: Submitting ShuffleMapStage 1 (MapPartitionsRDD[6] at map at KMeans.scala:40), which has no missing parents
+24/10/21 13:32:19 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 7.3 KiB, free 433.9 MiB)
+24/10/21 13:32:19 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 3.9 KiB, free 433.9 MiB)
+24/10/21 13:32:19 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on exp-1-23.expanse.sdsc.edu:33397 (size: 3.9 KiB, free: 434.3 MiB)
+24/10/21 13:32:19 INFO SparkContext: Created broadcast 4 from broadcast at DAGScheduler.scala:1478
+24/10/21 13:32:19 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 1 (MapPartitionsRDD[6] at map at KMeans.scala:40) (first 15 tasks are for partitions Vector(0, 1))
+24/10/21 13:32:19 INFO TaskSchedulerImpl: Adding task set 1.0 with 2 tasks resource profile 0
+24/10/21 13:32:19 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 2) (exp-1-23.expanse.sdsc.edu, executor driver, partition 0, PROCESS_LOCAL, 4503 bytes) taskResourceAssignments Map()
+24/10/21 13:32:19 INFO TaskSetManager: Starting task 1.0 in stage 1.0 (TID 3) (exp-1-23.expanse.sdsc.edu, executor driver, partition 1, PROCESS_LOCAL, 4503 bytes) taskResourceAssignments Map()
+24/10/21 13:32:19 INFO Executor: Running task 0.0 in stage 1.0 (TID 2)
+24/10/21 13:32:19 INFO Executor: Running task 1.0 in stage 1.0 (TID 3)
+24/10/21 13:32:19 INFO HadoopRDD: Input split: file:/home/hvangala/project4/points-small.txt:18474+18474
+24/10/21 13:32:19 INFO HadoopRDD: Input split: file:/home/hvangala/project4/points-small.txt:0+18474
+24/10/21 13:32:19 INFO Executor: Finished task 1.0 in stage 1.0 (TID 3). 1132 bytes result sent to driver
+24/10/21 13:32:19 INFO Executor: Finished task 0.0 in stage 1.0 (TID 2). 1175 bytes result sent to driver
+24/10/21 13:32:19 INFO TaskSetManager: Finished task 1.0 in stage 1.0 (TID 3) in 139 ms on exp-1-23.expanse.sdsc.edu (executor driver) (1/2)
+24/10/21 13:32:19 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 2) in 147 ms on exp-1-23.expanse.sdsc.edu (executor driver) (2/2)
+24/10/21 13:32:19 INFO DAGScheduler: ShuffleMapStage 1 (map at KMeans.scala:40) finished in 0.165 s
+24/10/21 13:32:19 INFO DAGScheduler: looking for newly runnable stages
+24/10/21 13:32:19 INFO DAGScheduler: running: Set()
+24/10/21 13:32:19 INFO DAGScheduler: waiting: Set(ResultStage 2)
+24/10/21 13:32:19 INFO DAGScheduler: failed: Set()
+24/10/21 13:32:19 INFO DAGScheduler: Submitting ResultStage 2 (MapPartitionsRDD[8] at mapValues at KMeans.scala:46), which has no missing parents
+24/10/21 13:32:19 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 8.5 KiB, free 433.9 MiB)
+24/10/21 13:32:19 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+24/10/21 13:32:19 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 4.4 KiB, free 433.9 MiB)
+24/10/21 13:32:19 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on exp-1-23.expanse.sdsc.edu:33397 (size: 4.4 KiB, free: 434.3 MiB)
+24/10/21 13:32:19 INFO SparkContext: Created broadcast 5 from broadcast at DAGScheduler.scala:1478
+24/10/21 13:32:19 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 2 (MapPartitionsRDD[8] at mapValues at KMeans.scala:46) (first 15 tasks are for partitions Vector(0, 1))
+24/10/21 13:32:19 INFO TaskSchedulerImpl: Adding task set 2.0 with 2 tasks resource profile 0
+24/10/21 13:32:19 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 4) (exp-1-23.expanse.sdsc.edu, executor driver, partition 0, NODE_LOCAL, 4271 bytes) taskResourceAssignments Map()
+24/10/21 13:32:19 INFO TaskSetManager: Starting task 1.0 in stage 2.0 (TID 5) (exp-1-23.expanse.sdsc.edu, executor driver, partition 1, NODE_LOCAL, 4271 bytes) taskResourceAssignments Map()
+24/10/21 13:32:19 INFO Executor: Running task 0.0 in stage 2.0 (TID 4)
+24/10/21 13:32:19 INFO Executor: Running task 1.0 in stage 2.0 (TID 5)
+24/10/21 13:32:19 INFO ShuffleBlockFetcherIterator: Getting 2 (12.6 KiB) non-empty blocks including 2 (12.6 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+24/10/21 13:32:19 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 9 ms
+24/10/21 13:32:19 INFO ShuffleBlockFetcherIterator: Getting 2 (13.2 KiB) non-empty blocks including 2 (13.2 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+24/10/21 13:32:19 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 19 ms
+24/10/21 13:32:19 INFO Executor: Finished task 0.0 in stage 2.0 (TID 4). 3824 bytes result sent to driver
+24/10/21 13:32:19 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 4) in 122 ms on exp-1-23.expanse.sdsc.edu (executor driver) (1/2)
+24/10/21 13:32:19 INFO Executor: Finished task 1.0 in stage 2.0 (TID 5). 4366 bytes result sent to driver
+24/10/21 13:32:19 INFO TaskSetManager: Finished task 1.0 in stage 2.0 (TID 5) in 126 ms on exp-1-23.expanse.sdsc.edu (executor driver) (2/2)
+24/10/21 13:32:19 INFO TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool 
+24/10/21 13:32:19 INFO DAGScheduler: ResultStage 2 (collect at KMeans.scala:46) finished in 0.144 s
+24/10/21 13:32:19 INFO DAGScheduler: Job 1 is finished. Cancelling potential speculative or zombie tasks for this job
+24/10/21 13:32:19 INFO TaskSchedulerImpl: Killing all running tasks in stage 2: Stage finished
+24/10/21 13:32:19 INFO DAGScheduler: Job 1 finished: collect at KMeans.scala:46, took 0.340749 s
+24/10/21 13:32:19 INFO TorrentBroadcast: Destroying Broadcast(3) (from destroy at KMeans.scala:53)
+24/10/21 13:32:19 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 4.3 KiB, free 433.9 MiB)
+24/10/21 13:32:19 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 2.0 KiB, free 433.9 MiB)
+24/10/21 13:32:19 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on exp-1-23.expanse.sdsc.edu:33397 (size: 2.0 KiB, free: 434.3 MiB)
+24/10/21 13:32:19 INFO SparkContext: Created broadcast 6 from broadcast at KMeans.scala:37
+24/10/21 13:32:19 INFO BlockManagerInfo: Removed broadcast_3_piece0 on exp-1-23.expanse.sdsc.edu:33397 in memory (size: 846.0 B, free: 434.3 MiB)
+24/10/21 13:32:19 INFO SparkContext: Starting job: collect at KMeans.scala:46
+24/10/21 13:32:19 INFO DAGScheduler: Registering RDD 9 (map at KMeans.scala:40) as input to shuffle 1
+24/10/21 13:32:19 INFO DAGScheduler: Got job 2 (collect at KMeans.scala:46) with 2 output partitions
+24/10/21 13:32:19 INFO DAGScheduler: Final stage: ResultStage 4 (collect at KMeans.scala:46)
+24/10/21 13:32:19 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 3)
+24/10/21 13:32:19 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 3)
+24/10/21 13:32:19 INFO DAGScheduler: Submitting ShuffleMapStage 3 (MapPartitionsRDD[9] at map at KMeans.scala:40), which has no missing parents
+24/10/21 13:32:19 INFO MemoryStore: Block broadcast_7 stored as values in memory (estimated size 7.3 KiB, free 433.9 MiB)
+24/10/21 13:32:19 INFO MemoryStore: Block broadcast_7_piece0 stored as bytes in memory (estimated size 3.9 KiB, free 433.9 MiB)
+24/10/21 13:32:19 INFO BlockManagerInfo: Added broadcast_7_piece0 in memory on exp-1-23.expanse.sdsc.edu:33397 (size: 3.9 KiB, free: 434.3 MiB)
+24/10/21 13:32:19 INFO SparkContext: Created broadcast 7 from broadcast at DAGScheduler.scala:1478
+24/10/21 13:32:19 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 3 (MapPartitionsRDD[9] at map at KMeans.scala:40) (first 15 tasks are for partitions Vector(0, 1))
+24/10/21 13:32:19 INFO TaskSchedulerImpl: Adding task set 3.0 with 2 tasks resource profile 0
+24/10/21 13:32:19 INFO TaskSetManager: Starting task 0.0 in stage 3.0 (TID 6) (exp-1-23.expanse.sdsc.edu, executor driver, partition 0, PROCESS_LOCAL, 4503 bytes) taskResourceAssignments Map()
+24/10/21 13:32:19 INFO TaskSetManager: Starting task 1.0 in stage 3.0 (TID 7) (exp-1-23.expanse.sdsc.edu, executor driver, partition 1, PROCESS_LOCAL, 4503 bytes) taskResourceAssignments Map()
+24/10/21 13:32:19 INFO Executor: Running task 1.0 in stage 3.0 (TID 7)
+24/10/21 13:32:19 INFO HadoopRDD: Input split: file:/home/hvangala/project4/points-small.txt:18474+18474
+24/10/21 13:32:19 INFO Executor: Running task 0.0 in stage 3.0 (TID 6)
+24/10/21 13:32:19 INFO HadoopRDD: Input split: file:/home/hvangala/project4/points-small.txt:0+18474
+24/10/21 13:32:19 INFO Executor: Finished task 1.0 in stage 3.0 (TID 7). 1132 bytes result sent to driver
+24/10/21 13:32:19 INFO TaskSetManager: Finished task 1.0 in stage 3.0 (TID 7) in 45 ms on exp-1-23.expanse.sdsc.edu (executor driver) (1/2)
+24/10/21 13:32:19 INFO Executor: Finished task 0.0 in stage 3.0 (TID 6). 1132 bytes result sent to driver
+24/10/21 13:32:19 INFO TaskSetManager: Finished task 0.0 in stage 3.0 (TID 6) in 49 ms on exp-1-23.expanse.sdsc.edu (executor driver) (2/2)
+24/10/21 13:32:19 INFO TaskSchedulerImpl: Removed TaskSet 3.0, whose tasks have all completed, from pool 
+24/10/21 13:32:19 INFO DAGScheduler: ShuffleMapStage 3 (map at KMeans.scala:40) finished in 0.060 s
+24/10/21 13:32:19 INFO DAGScheduler: looking for newly runnable stages
+24/10/21 13:32:19 INFO DAGScheduler: running: Set()
+24/10/21 13:32:19 INFO DAGScheduler: waiting: Set(ResultStage 4)
+24/10/21 13:32:19 INFO DAGScheduler: failed: Set()
+24/10/21 13:32:19 INFO DAGScheduler: Submitting ResultStage 4 (MapPartitionsRDD[11] at mapValues at KMeans.scala:46), which has no missing parents
+24/10/21 13:32:19 INFO MemoryStore: Block broadcast_8 stored as values in memory (estimated size 8.5 KiB, free 433.9 MiB)
+24/10/21 13:32:19 INFO MemoryStore: Block broadcast_8_piece0 stored as bytes in memory (estimated size 4.4 KiB, free 433.8 MiB)
+24/10/21 13:32:19 INFO BlockManagerInfo: Added broadcast_8_piece0 in memory on exp-1-23.expanse.sdsc.edu:33397 (size: 4.4 KiB, free: 434.3 MiB)
+24/10/21 13:32:19 INFO SparkContext: Created broadcast 8 from broadcast at DAGScheduler.scala:1478
+24/10/21 13:32:19 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 4 (MapPartitionsRDD[11] at mapValues at KMeans.scala:46) (first 15 tasks are for partitions Vector(0, 1))
+24/10/21 13:32:19 INFO TaskSchedulerImpl: Adding task set 4.0 with 2 tasks resource profile 0
+24/10/21 13:32:19 INFO TaskSetManager: Starting task 0.0 in stage 4.0 (TID 8) (exp-1-23.expanse.sdsc.edu, executor driver, partition 0, NODE_LOCAL, 4271 bytes) taskResourceAssignments Map()
+24/10/21 13:32:19 INFO TaskSetManager: Starting task 1.0 in stage 4.0 (TID 9) (exp-1-23.expanse.sdsc.edu, executor driver, partition 1, NODE_LOCAL, 4271 bytes) taskResourceAssignments Map()
+24/10/21 13:32:19 INFO Executor: Running task 0.0 in stage 4.0 (TID 8)
+24/10/21 13:32:19 INFO Executor: Running task 1.0 in stage 4.0 (TID 9)
+24/10/21 13:32:19 INFO ShuffleBlockFetcherIterator: Getting 2 (13.2 KiB) non-empty blocks including 2 (13.2 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+24/10/21 13:32:19 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+24/10/21 13:32:19 INFO ShuffleBlockFetcherIterator: Getting 2 (12.6 KiB) non-empty blocks including 2 (12.6 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+24/10/21 13:32:19 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+24/10/21 13:32:19 INFO Executor: Finished task 0.0 in stage 4.0 (TID 8). 4040 bytes result sent to driver
+24/10/21 13:32:19 INFO TaskSetManager: Finished task 0.0 in stage 4.0 (TID 8) in 59 ms on exp-1-23.expanse.sdsc.edu (executor driver) (1/2)
+24/10/21 13:32:19 INFO Executor: Finished task 1.0 in stage 4.0 (TID 9). 4148 bytes result sent to driver
+24/10/21 13:32:19 INFO TaskSetManager: Finished task 1.0 in stage 4.0 (TID 9) in 70 ms on exp-1-23.expanse.sdsc.edu (executor driver) (2/2)
+24/10/21 13:32:19 INFO TaskSchedulerImpl: Removed TaskSet 4.0, whose tasks have all completed, from pool 
+24/10/21 13:32:19 INFO DAGScheduler: ResultStage 4 (collect at KMeans.scala:46) finished in 0.081 s
+24/10/21 13:32:19 INFO DAGScheduler: Job 2 is finished. Cancelling potential speculative or zombie tasks for this job
+24/10/21 13:32:19 INFO TaskSchedulerImpl: Killing all running tasks in stage 4: Stage finished
+24/10/21 13:32:19 INFO DAGScheduler: Job 2 finished: collect at KMeans.scala:46, took 0.156750 s
+24/10/21 13:32:19 INFO TorrentBroadcast: Destroying Broadcast(6) (from destroy at KMeans.scala:53)
+24/10/21 13:32:19 INFO MemoryStore: Block broadcast_9 stored as values in memory (estimated size 4.3 KiB, free 433.8 MiB)
+24/10/21 13:32:19 INFO MemoryStore: Block broadcast_9_piece0 stored as bytes in memory (estimated size 2.0 KiB, free 433.8 MiB)
+24/10/21 13:32:19 INFO BlockManagerInfo: Added broadcast_9_piece0 in memory on exp-1-23.expanse.sdsc.edu:33397 (size: 2.0 KiB, free: 434.3 MiB)
+24/10/21 13:32:19 INFO SparkContext: Created broadcast 9 from broadcast at KMeans.scala:37
+24/10/21 13:32:19 INFO BlockManagerInfo: Removed broadcast_6_piece0 on exp-1-23.expanse.sdsc.edu:33397 in memory (size: 2.0 KiB, free: 434.3 MiB)
+24/10/21 13:32:19 INFO SparkContext: Starting job: collect at KMeans.scala:46
+24/10/21 13:32:19 INFO DAGScheduler: Registering RDD 12 (map at KMeans.scala:40) as input to shuffle 2
+24/10/21 13:32:19 INFO DAGScheduler: Got job 3 (collect at KMeans.scala:46) with 2 output partitions
+24/10/21 13:32:19 INFO DAGScheduler: Final stage: ResultStage 6 (collect at KMeans.scala:46)
+24/10/21 13:32:19 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 5)
+24/10/21 13:32:19 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 5)
+24/10/21 13:32:19 INFO DAGScheduler: Submitting ShuffleMapStage 5 (MapPartitionsRDD[12] at map at KMeans.scala:40), which has no missing parents
+24/10/21 13:32:19 INFO MemoryStore: Block broadcast_10 stored as values in memory (estimated size 7.3 KiB, free 433.8 MiB)
+24/10/21 13:32:19 INFO MemoryStore: Block broadcast_10_piece0 stored as bytes in memory (estimated size 3.9 KiB, free 433.8 MiB)
+24/10/21 13:32:19 INFO BlockManagerInfo: Added broadcast_10_piece0 in memory on exp-1-23.expanse.sdsc.edu:33397 (size: 3.9 KiB, free: 434.3 MiB)
+24/10/21 13:32:19 INFO SparkContext: Created broadcast 10 from broadcast at DAGScheduler.scala:1478
+24/10/21 13:32:19 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 5 (MapPartitionsRDD[12] at map at KMeans.scala:40) (first 15 tasks are for partitions Vector(0, 1))
+24/10/21 13:32:19 INFO TaskSchedulerImpl: Adding task set 5.0 with 2 tasks resource profile 0
+24/10/21 13:32:19 INFO TaskSetManager: Starting task 0.0 in stage 5.0 (TID 10) (exp-1-23.expanse.sdsc.edu, executor driver, partition 0, PROCESS_LOCAL, 4503 bytes) taskResourceAssignments Map()
+24/10/21 13:32:19 INFO TaskSetManager: Starting task 1.0 in stage 5.0 (TID 11) (exp-1-23.expanse.sdsc.edu, executor driver, partition 1, PROCESS_LOCAL, 4503 bytes) taskResourceAssignments Map()
+24/10/21 13:32:19 INFO Executor: Running task 0.0 in stage 5.0 (TID 10)
+24/10/21 13:32:19 INFO Executor: Running task 1.0 in stage 5.0 (TID 11)
+24/10/21 13:32:19 INFO HadoopRDD: Input split: file:/home/hvangala/project4/points-small.txt:18474+18474
+24/10/21 13:32:19 INFO HadoopRDD: Input split: file:/home/hvangala/project4/points-small.txt:0+18474
+24/10/21 13:32:19 INFO Executor: Finished task 1.0 in stage 5.0 (TID 11). 1132 bytes result sent to driver
+24/10/21 13:32:19 INFO TaskSetManager: Finished task 1.0 in stage 5.0 (TID 11) in 30 ms on exp-1-23.expanse.sdsc.edu (executor driver) (1/2)
+24/10/21 13:32:19 INFO Executor: Finished task 0.0 in stage 5.0 (TID 10). 1132 bytes result sent to driver
+24/10/21 13:32:19 INFO TaskSetManager: Finished task 0.0 in stage 5.0 (TID 10) in 54 ms on exp-1-23.expanse.sdsc.edu (executor driver) (2/2)
+24/10/21 13:32:19 INFO TaskSchedulerImpl: Removed TaskSet 5.0, whose tasks have all completed, from pool 
+24/10/21 13:32:19 INFO DAGScheduler: ShuffleMapStage 5 (map at KMeans.scala:40) finished in 0.066 s
+24/10/21 13:32:19 INFO DAGScheduler: looking for newly runnable stages
+24/10/21 13:32:19 INFO DAGScheduler: running: Set()
+24/10/21 13:32:19 INFO DAGScheduler: waiting: Set(ResultStage 6)
+24/10/21 13:32:19 INFO DAGScheduler: failed: Set()
+24/10/21 13:32:19 INFO DAGScheduler: Submitting ResultStage 6 (MapPartitionsRDD[14] at mapValues at KMeans.scala:46), which has no missing parents
+24/10/21 13:32:19 INFO MemoryStore: Block broadcast_11 stored as values in memory (estimated size 8.5 KiB, free 433.8 MiB)
+24/10/21 13:32:19 INFO MemoryStore: Block broadcast_11_piece0 stored as bytes in memory (estimated size 4.3 KiB, free 433.8 MiB)
+24/10/21 13:32:19 INFO BlockManagerInfo: Added broadcast_11_piece0 in memory on exp-1-23.expanse.sdsc.edu:33397 (size: 4.3 KiB, free: 434.3 MiB)
+24/10/21 13:32:19 INFO SparkContext: Created broadcast 11 from broadcast at DAGScheduler.scala:1478
+24/10/21 13:32:19 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 6 (MapPartitionsRDD[14] at mapValues at KMeans.scala:46) (first 15 tasks are for partitions Vector(0, 1))
+24/10/21 13:32:19 INFO TaskSchedulerImpl: Adding task set 6.0 with 2 tasks resource profile 0
+24/10/21 13:32:19 INFO TaskSetManager: Starting task 0.0 in stage 6.0 (TID 12) (exp-1-23.expanse.sdsc.edu, executor driver, partition 0, NODE_LOCAL, 4271 bytes) taskResourceAssignments Map()
+24/10/21 13:32:19 INFO TaskSetManager: Starting task 1.0 in stage 6.0 (TID 13) (exp-1-23.expanse.sdsc.edu, executor driver, partition 1, NODE_LOCAL, 4271 bytes) taskResourceAssignments Map()
+24/10/21 13:32:19 INFO Executor: Running task 1.0 in stage 6.0 (TID 13)
+24/10/21 13:32:19 INFO ShuffleBlockFetcherIterator: Getting 2 (13.2 KiB) non-empty blocks including 2 (13.2 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+24/10/21 13:32:19 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+24/10/21 13:32:19 INFO Executor: Running task 0.0 in stage 6.0 (TID 12)
+24/10/21 13:32:19 INFO ShuffleBlockFetcherIterator: Getting 2 (12.6 KiB) non-empty blocks including 2 (12.6 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+24/10/21 13:32:19 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+24/10/21 13:32:19 INFO Executor: Finished task 1.0 in stage 6.0 (TID 13). 4148 bytes result sent to driver
+24/10/21 13:32:19 INFO TaskSetManager: Finished task 1.0 in stage 6.0 (TID 13) in 37 ms on exp-1-23.expanse.sdsc.edu (executor driver) (1/2)
+24/10/21 13:32:19 INFO Executor: Finished task 0.0 in stage 6.0 (TID 12). 4083 bytes result sent to driver
+24/10/21 13:32:19 INFO TaskSetManager: Finished task 0.0 in stage 6.0 (TID 12) in 55 ms on exp-1-23.expanse.sdsc.edu (executor driver) (2/2)
+24/10/21 13:32:19 INFO TaskSchedulerImpl: Removed TaskSet 6.0, whose tasks have all completed, from pool 
+24/10/21 13:32:19 INFO DAGScheduler: ResultStage 6 (collect at KMeans.scala:46) finished in 0.065 s
+24/10/21 13:32:19 INFO DAGScheduler: Job 3 is finished. Cancelling potential speculative or zombie tasks for this job
+24/10/21 13:32:19 INFO TaskSchedulerImpl: Killing all running tasks in stage 6: Stage finished
+24/10/21 13:32:19 INFO DAGScheduler: Job 3 finished: collect at KMeans.scala:46, took 0.142187 s
+24/10/21 13:32:19 INFO TorrentBroadcast: Destroying Broadcast(9) (from destroy at KMeans.scala:53)
+24/10/21 13:32:19 INFO MemoryStore: Block broadcast_12 stored as values in memory (estimated size 4.3 KiB, free 433.8 MiB)
+24/10/21 13:32:19 INFO MemoryStore: Block broadcast_12_piece0 stored as bytes in memory (estimated size 2.0 KiB, free 433.8 MiB)
+24/10/21 13:32:19 INFO BlockManagerInfo: Added broadcast_12_piece0 in memory on exp-1-23.expanse.sdsc.edu:33397 (size: 2.0 KiB, free: 434.3 MiB)
+24/10/21 13:32:19 INFO SparkContext: Created broadcast 12 from broadcast at KMeans.scala:37
+24/10/21 13:32:19 INFO BlockManagerInfo: Removed broadcast_9_piece0 on exp-1-23.expanse.sdsc.edu:33397 in memory (size: 2.0 KiB, free: 434.3 MiB)
+24/10/21 13:32:19 INFO SparkContext: Starting job: collect at KMeans.scala:46
+24/10/21 13:32:19 INFO DAGScheduler: Registering RDD 15 (map at KMeans.scala:40) as input to shuffle 3
+24/10/21 13:32:19 INFO DAGScheduler: Got job 4 (collect at KMeans.scala:46) with 2 output partitions
+24/10/21 13:32:19 INFO DAGScheduler: Final stage: ResultStage 8 (collect at KMeans.scala:46)
+24/10/21 13:32:19 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 7)
+24/10/21 13:32:19 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 7)
+24/10/21 13:32:19 INFO DAGScheduler: Submitting ShuffleMapStage 7 (MapPartitionsRDD[15] at map at KMeans.scala:40), which has no missing parents
+24/10/21 13:32:19 INFO MemoryStore: Block broadcast_13 stored as values in memory (estimated size 7.3 KiB, free 433.8 MiB)
+24/10/21 13:32:19 INFO MemoryStore: Block broadcast_13_piece0 stored as bytes in memory (estimated size 3.9 KiB, free 433.8 MiB)
+24/10/21 13:32:19 INFO BlockManagerInfo: Added broadcast_13_piece0 in memory on exp-1-23.expanse.sdsc.edu:33397 (size: 3.9 KiB, free: 434.3 MiB)
+24/10/21 13:32:19 INFO SparkContext: Created broadcast 13 from broadcast at DAGScheduler.scala:1478
+24/10/21 13:32:19 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 7 (MapPartitionsRDD[15] at map at KMeans.scala:40) (first 15 tasks are for partitions Vector(0, 1))
+24/10/21 13:32:19 INFO TaskSchedulerImpl: Adding task set 7.0 with 2 tasks resource profile 0
+24/10/21 13:32:19 INFO TaskSetManager: Starting task 0.0 in stage 7.0 (TID 14) (exp-1-23.expanse.sdsc.edu, executor driver, partition 0, PROCESS_LOCAL, 4503 bytes) taskResourceAssignments Map()
+24/10/21 13:32:19 INFO TaskSetManager: Starting task 1.0 in stage 7.0 (TID 15) (exp-1-23.expanse.sdsc.edu, executor driver, partition 1, PROCESS_LOCAL, 4503 bytes) taskResourceAssignments Map()
+24/10/21 13:32:19 INFO Executor: Running task 0.0 in stage 7.0 (TID 14)
+24/10/21 13:32:19 INFO Executor: Running task 1.0 in stage 7.0 (TID 15)
+24/10/21 13:32:19 INFO HadoopRDD: Input split: file:/home/hvangala/project4/points-small.txt:0+18474
+24/10/21 13:32:19 INFO BlockManagerInfo: Removed broadcast_10_piece0 on exp-1-23.expanse.sdsc.edu:33397 in memory (size: 3.9 KiB, free: 434.3 MiB)
+24/10/21 13:32:19 INFO HadoopRDD: Input split: file:/home/hvangala/project4/points-small.txt:18474+18474
+24/10/21 13:32:20 INFO Executor: Finished task 1.0 in stage 7.0 (TID 15). 1132 bytes result sent to driver
+24/10/21 13:32:20 INFO TaskSetManager: Finished task 1.0 in stage 7.0 (TID 15) in 78 ms on exp-1-23.expanse.sdsc.edu (executor driver) (1/2)
+24/10/21 13:32:20 INFO Executor: Finished task 0.0 in stage 7.0 (TID 14). 1132 bytes result sent to driver
+24/10/21 13:32:20 INFO TaskSetManager: Finished task 0.0 in stage 7.0 (TID 14) in 82 ms on exp-1-23.expanse.sdsc.edu (executor driver) (2/2)
+24/10/21 13:32:20 INFO TaskSchedulerImpl: Removed TaskSet 7.0, whose tasks have all completed, from pool 
+24/10/21 13:32:20 INFO DAGScheduler: ShuffleMapStage 7 (map at KMeans.scala:40) finished in 0.090 s
+24/10/21 13:32:20 INFO DAGScheduler: looking for newly runnable stages
+24/10/21 13:32:20 INFO DAGScheduler: running: Set()
+24/10/21 13:32:20 INFO DAGScheduler: waiting: Set(ResultStage 8)
+24/10/21 13:32:20 INFO DAGScheduler: failed: Set()
+24/10/21 13:32:20 INFO DAGScheduler: Submitting ResultStage 8 (MapPartitionsRDD[17] at mapValues at KMeans.scala:46), which has no missing parents
+24/10/21 13:32:20 INFO MemoryStore: Block broadcast_14 stored as values in memory (estimated size 8.5 KiB, free 433.8 MiB)
+24/10/21 13:32:20 INFO MemoryStore: Block broadcast_14_piece0 stored as bytes in memory (estimated size 4.4 KiB, free 433.8 MiB)
+24/10/21 13:32:20 INFO BlockManagerInfo: Added broadcast_14_piece0 in memory on exp-1-23.expanse.sdsc.edu:33397 (size: 4.4 KiB, free: 434.3 MiB)
+24/10/21 13:32:20 INFO SparkContext: Created broadcast 14 from broadcast at DAGScheduler.scala:1478
+24/10/21 13:32:20 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 8 (MapPartitionsRDD[17] at mapValues at KMeans.scala:46) (first 15 tasks are for partitions Vector(0, 1))
+24/10/21 13:32:20 INFO TaskSchedulerImpl: Adding task set 8.0 with 2 tasks resource profile 0
+24/10/21 13:32:20 INFO BlockManagerInfo: Removed broadcast_7_piece0 on exp-1-23.expanse.sdsc.edu:33397 in memory (size: 3.9 KiB, free: 434.3 MiB)
+24/10/21 13:32:20 INFO TaskSetManager: Starting task 0.0 in stage 8.0 (TID 16) (exp-1-23.expanse.sdsc.edu, executor driver, partition 0, NODE_LOCAL, 4271 bytes) taskResourceAssignments Map()
+24/10/21 13:32:20 INFO TaskSetManager: Starting task 1.0 in stage 8.0 (TID 17) (exp-1-23.expanse.sdsc.edu, executor driver, partition 1, NODE_LOCAL, 4271 bytes) taskResourceAssignments Map()
+24/10/21 13:32:20 INFO Executor: Running task 1.0 in stage 8.0 (TID 17)
+24/10/21 13:32:20 INFO Executor: Running task 0.0 in stage 8.0 (TID 16)
+24/10/21 13:32:20 INFO ShuffleBlockFetcherIterator: Getting 2 (13.2 KiB) non-empty blocks including 2 (13.2 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+24/10/21 13:32:20 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+24/10/21 13:32:20 INFO ShuffleBlockFetcherIterator: Getting 2 (12.6 KiB) non-empty blocks including 2 (12.6 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+24/10/21 13:32:20 INFO Executor: Finished task 1.0 in stage 8.0 (TID 17). 4148 bytes result sent to driver
+24/10/21 13:32:20 INFO TaskSetManager: Finished task 1.0 in stage 8.0 (TID 17) in 14 ms on exp-1-23.expanse.sdsc.edu (executor driver) (1/2)
+24/10/21 13:32:20 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 11 ms
+24/10/21 13:32:20 INFO Executor: Finished task 0.0 in stage 8.0 (TID 16). 4040 bytes result sent to driver
+24/10/21 13:32:20 INFO TaskSetManager: Finished task 0.0 in stage 8.0 (TID 16) in 29 ms on exp-1-23.expanse.sdsc.edu (executor driver) (2/2)
+24/10/21 13:32:20 INFO TaskSchedulerImpl: Removed TaskSet 8.0, whose tasks have all completed, from pool 
+24/10/21 13:32:20 INFO DAGScheduler: ResultStage 8 (collect at KMeans.scala:46) finished in 0.036 s
+24/10/21 13:32:20 INFO DAGScheduler: Job 4 is finished. Cancelling potential speculative or zombie tasks for this job
+24/10/21 13:32:20 INFO TaskSchedulerImpl: Killing all running tasks in stage 8: Stage finished
+24/10/21 13:32:20 INFO DAGScheduler: Job 4 finished: collect at KMeans.scala:46, took 0.134552 s
+24/10/21 13:32:20 INFO TorrentBroadcast: Destroying Broadcast(12) (from destroy at KMeans.scala:53)
+24/10/21 13:32:20 INFO MemoryStore: Block broadcast_15 stored as values in memory (estimated size 4.3 KiB, free 433.8 MiB)
+24/10/21 13:32:20 INFO MemoryStore: Block broadcast_15_piece0 stored as bytes in memory (estimated size 2.0 KiB, free 433.8 MiB)
+24/10/21 13:32:20 INFO BlockManagerInfo: Added broadcast_15_piece0 in memory on exp-1-23.expanse.sdsc.edu:33397 (size: 2.0 KiB, free: 434.3 MiB)
+24/10/21 13:32:20 INFO SparkContext: Created broadcast 15 from broadcast at KMeans.scala:37
+24/10/21 13:32:20 INFO BlockManagerInfo: Removed broadcast_5_piece0 on exp-1-23.expanse.sdsc.edu:33397 in memory (size: 4.4 KiB, free: 434.3 MiB)
+24/10/21 13:32:20 INFO BlockManagerInfo: Removed broadcast_12_piece0 on exp-1-23.expanse.sdsc.edu:33397 in memory (size: 2.0 KiB, free: 434.3 MiB)
+24/10/21 13:32:20 INFO SparkContext: Starting job: collect at KMeans.scala:46
+24/10/21 13:32:20 INFO DAGScheduler: Registering RDD 18 (map at KMeans.scala:40) as input to shuffle 4
+24/10/21 13:32:20 INFO DAGScheduler: Got job 5 (collect at KMeans.scala:46) with 2 output partitions
+24/10/21 13:32:20 INFO DAGScheduler: Final stage: ResultStage 10 (collect at KMeans.scala:46)
+24/10/21 13:32:20 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 9)
+24/10/21 13:32:20 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 9)
+24/10/21 13:32:20 INFO DAGScheduler: Submitting ShuffleMapStage 9 (MapPartitionsRDD[18] at map at KMeans.scala:40), which has no missing parents
+24/10/21 13:32:20 INFO MemoryStore: Block broadcast_16 stored as values in memory (estimated size 7.3 KiB, free 433.8 MiB)
+24/10/21 13:32:20 INFO MemoryStore: Block broadcast_16_piece0 stored as bytes in memory (estimated size 3.9 KiB, free 433.8 MiB)
+24/10/21 13:32:20 INFO BlockManagerInfo: Added broadcast_16_piece0 in memory on exp-1-23.expanse.sdsc.edu:33397 (size: 3.9 KiB, free: 434.3 MiB)
+24/10/21 13:32:20 INFO SparkContext: Created broadcast 16 from broadcast at DAGScheduler.scala:1478
+24/10/21 13:32:20 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 9 (MapPartitionsRDD[18] at map at KMeans.scala:40) (first 15 tasks are for partitions Vector(0, 1))
+24/10/21 13:32:20 INFO TaskSchedulerImpl: Adding task set 9.0 with 2 tasks resource profile 0
+24/10/21 13:32:20 INFO TaskSetManager: Starting task 0.0 in stage 9.0 (TID 18) (exp-1-23.expanse.sdsc.edu, executor driver, partition 0, PROCESS_LOCAL, 4503 bytes) taskResourceAssignments Map()
+24/10/21 13:32:20 INFO TaskSetManager: Starting task 1.0 in stage 9.0 (TID 19) (exp-1-23.expanse.sdsc.edu, executor driver, partition 1, PROCESS_LOCAL, 4503 bytes) taskResourceAssignments Map()
+24/10/21 13:32:20 INFO Executor: Running task 0.0 in stage 9.0 (TID 18)
+24/10/21 13:32:20 INFO Executor: Running task 1.0 in stage 9.0 (TID 19)
+24/10/21 13:32:20 INFO HadoopRDD: Input split: file:/home/hvangala/project4/points-small.txt:18474+18474
+24/10/21 13:32:20 INFO Executor: Finished task 1.0 in stage 9.0 (TID 19). 1132 bytes result sent to driver
+24/10/21 13:32:20 INFO TaskSetManager: Finished task 1.0 in stage 9.0 (TID 19) in 26 ms on exp-1-23.expanse.sdsc.edu (executor driver) (1/2)
+24/10/21 13:32:20 INFO HadoopRDD: Input split: file:/home/hvangala/project4/points-small.txt:0+18474
+24/10/21 13:32:20 INFO Executor: Finished task 0.0 in stage 9.0 (TID 18). 1132 bytes result sent to driver
+24/10/21 13:32:20 INFO TaskSetManager: Finished task 0.0 in stage 9.0 (TID 18) in 50 ms on exp-1-23.expanse.sdsc.edu (executor driver) (2/2)
+24/10/21 13:32:20 INFO TaskSchedulerImpl: Removed TaskSet 9.0, whose tasks have all completed, from pool 
+24/10/21 13:32:20 INFO DAGScheduler: ShuffleMapStage 9 (map at KMeans.scala:40) finished in 0.057 s
+24/10/21 13:32:20 INFO DAGScheduler: looking for newly runnable stages
+24/10/21 13:32:20 INFO DAGScheduler: running: Set()
+24/10/21 13:32:20 INFO DAGScheduler: waiting: Set(ResultStage 10)
+24/10/21 13:32:20 INFO DAGScheduler: failed: Set()
+24/10/21 13:32:20 INFO DAGScheduler: Submitting ResultStage 10 (MapPartitionsRDD[20] at mapValues at KMeans.scala:46), which has no missing parents
+24/10/21 13:32:20 INFO MemoryStore: Block broadcast_17 stored as values in memory (estimated size 8.5 KiB, free 433.8 MiB)
+24/10/21 13:32:20 INFO MemoryStore: Block broadcast_17_piece0 stored as bytes in memory (estimated size 4.4 KiB, free 433.8 MiB)
+24/10/21 13:32:20 INFO BlockManagerInfo: Added broadcast_17_piece0 in memory on exp-1-23.expanse.sdsc.edu:33397 (size: 4.4 KiB, free: 434.3 MiB)
+24/10/21 13:32:20 INFO SparkContext: Created broadcast 17 from broadcast at DAGScheduler.scala:1478
+24/10/21 13:32:20 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 10 (MapPartitionsRDD[20] at mapValues at KMeans.scala:46) (first 15 tasks are for partitions Vector(0, 1))
+24/10/21 13:32:20 INFO TaskSchedulerImpl: Adding task set 10.0 with 2 tasks resource profile 0
+24/10/21 13:32:20 INFO TaskSetManager: Starting task 0.0 in stage 10.0 (TID 20) (exp-1-23.expanse.sdsc.edu, executor driver, partition 0, NODE_LOCAL, 4271 bytes) taskResourceAssignments Map()
+24/10/21 13:32:20 INFO TaskSetManager: Starting task 1.0 in stage 10.0 (TID 21) (exp-1-23.expanse.sdsc.edu, executor driver, partition 1, NODE_LOCAL, 4271 bytes) taskResourceAssignments Map()
+24/10/21 13:32:20 INFO Executor: Running task 0.0 in stage 10.0 (TID 20)
+24/10/21 13:32:20 INFO Executor: Running task 1.0 in stage 10.0 (TID 21)
+24/10/21 13:32:20 INFO ShuffleBlockFetcherIterator: Getting 2 (12.6 KiB) non-empty blocks including 2 (12.6 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+24/10/21 13:32:20 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+24/10/21 13:32:20 INFO ShuffleBlockFetcherIterator: Getting 2 (13.2 KiB) non-empty blocks including 2 (13.2 KiB) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+24/10/21 13:32:20 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+24/10/21 13:32:20 INFO Executor: Finished task 0.0 in stage 10.0 (TID 20). 4040 bytes result sent to driver
+24/10/21 13:32:20 INFO TaskSetManager: Finished task 0.0 in stage 10.0 (TID 20) in 33 ms on exp-1-23.expanse.sdsc.edu (executor driver) (1/2)
+24/10/21 13:32:20 INFO Executor: Finished task 1.0 in stage 10.0 (TID 21). 4191 bytes result sent to driver
+24/10/21 13:32:20 INFO TaskSetManager: Finished task 1.0 in stage 10.0 (TID 21) in 36 ms on exp-1-23.expanse.sdsc.edu (executor driver) (2/2)
+24/10/21 13:32:20 INFO TaskSchedulerImpl: Removed TaskSet 10.0, whose tasks have all completed, from pool 
+24/10/21 13:32:20 INFO DAGScheduler: ResultStage 10 (collect at KMeans.scala:46) finished in 0.045 s
+24/10/21 13:32:20 INFO DAGScheduler: Job 5 is finished. Cancelling potential speculative or zombie tasks for this job
+24/10/21 13:32:20 INFO TaskSchedulerImpl: Killing all running tasks in stage 10: Stage finished
+24/10/21 13:32:20 INFO DAGScheduler: Job 5 finished: collect at KMeans.scala:46, took 0.113012 s
+24/10/21 13:32:20 INFO TorrentBroadcast: Destroying Broadcast(15) (from destroy at KMeans.scala:53)
+	3.51	17.57
+	3.54	19.43
+	3.42	15.71
+	5.34	13.34
+	13.38	1.61
+	13.52	7.52
+	3.43	5.55
+	19.40	3.57
+24/10/21 13:32:20 INFO BlockManagerInfo: Removed broadcast_4_piece0 on exp-1-23.expanse.sdsc.edu:33397 in memory (size: 3.9 KiB, free: 434.3 MiB)
+	17.42	19.41
+	9.43	1.60
+	15.46	13.52
+	11.68	1.45
+	11.42	11.20
+	9.53	15.52
+	17.39	11.52
+	3.65	11.51
+	1.59	19.48
+	13.48	15.52
+	11.61	13.43
+	15.44	17.38
+24/10/21 13:32:20 INFO BlockManagerInfo: Removed broadcast_15_piece0 on exp-1-23.expanse.sdsc.edu:33397 in memory (size: 2.0 KiB, free: 434.3 MiB)
+	7.50	7.50
+	15.42	15.47
+	15.55	5.33
+	3.61	9.53
+	1.53	3.44
+	3.56	13.46
+	5.49	19.40
+	19.46	11.53
+	5.70	17.56
+	9.61	7.50
+	1.42	13.65
+	11.47	7.53
+	11.66	3.60
+	1.41	11.53
+	17.52	7.61
+	19.51	9.53
+	7.49	13.54
+	17.38	3.37
+	11.59	19.56
+	19.42	13.50
+	5.31	3.59
+	13.42	17.36
+	13.65	9.55
+	9.54	19.49
+	15.56	11.36
+	15.45	19.48
+	9.56	13.54
+	1.67	17.35
+	3.53	1.46
+	7.47	9.53
+	17.50	5.41
+	11.31	9.53
+	1.41	7.46
+	17.34	13.50
+	1.37	1.38
+	17.57	15.51
+	1.46	15.55
+	5.47	15.38
+	7.47	19.51
+	7.51	1.44
+	7.40	3.32
+	9.56	17.42
+	11.57	15.49
+	15.48	9.47
+	17.42	1.48
+	19.47	7.49
+	13.37	19.47
+	5.23	9.63
+	9.44	9.56
+	19.41	17.45
+	7.59	17.56
+	7.42	11.56
+	11.46	5.40
+	15.54	7.57
+	9.42	3.45
+	13.66	3.49
+	3.72	7.64
+	19.47	1.56
+	11.52	17.46
+	5.58	11.48
+	5.60	1.37
+	19.45	5.40
+	5.54	5.60
+	1.53	9.43
+	13.34	11.65
+	7.42	15.42
+	19.51	15.47
+	19.41	19.62
+	9.57	5.50
+	5.39	7.58
+	3.29	3.60
+	1.62	5.41
+	17.45	17.57
+	13.47	5.59
+	13.52	13.59
+	17.61	9.39
+	7.55	5.52
+	15.63	3.49
+	9.51	11.52
+	15.54	1.64
+24/10/21 13:32:20 INFO SparkUI: Stopped Spark web UI at http://exp-1-23.expanse.sdsc.edu:4040
+24/10/21 13:32:20 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+24/10/21 13:32:20 INFO MemoryStore: MemoryStore cleared
+24/10/21 13:32:20 INFO BlockManager: BlockManager stopped
+24/10/21 13:32:20 INFO BlockManagerMaster: BlockManagerMaster stopped
+24/10/21 13:32:20 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+24/10/21 13:32:20 INFO SparkContext: Successfully stopped SparkContext
+24/10/21 13:32:20 INFO ShutdownHookManager: Shutdown hook called
+24/10/21 13:32:20 INFO ShutdownHookManager: Deleting directory /tmp/spark-6224d172-a079-4590-881a-790498bbd27a
+24/10/21 13:32:20 INFO ShutdownHookManager: Deleting directory /tmp/spark-2be5c5fa-94e0-47c6-8b13-ed123effc952
